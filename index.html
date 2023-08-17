@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Soldiers Database</title>
+</head>
+<body>
+    <h1>Soldiers Database</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Birthplace</th>
+            <th>Military Unit</th>
+        </tr>
+        {% for record in records %}
+        <tr>
+            <td>{{ record[0] }}</td>
+            <td>{{ record[1] }}</td>
+            <td>{{ record[2] }}</td>
+            <td>{{ record[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Add a New Soldier</h2>
+    <form action="/add" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="birthplace">Birthplace:</label>
+        <input type="text" id="birthplace" name="birthplace" required><br>
+        <label for="military_unit">Military Unit:</label>
+        <input type="text" id="military_unit" name="military_unit" required><br>
+        <button type="submit">Add Soldier</button>
+    </form>
+</body>
+</html>
